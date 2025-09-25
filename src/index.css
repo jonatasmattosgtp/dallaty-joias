@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system para DallatyJoias - Joalheria de luxo
+Cores em HSL com foco em tons dourados elegantes e alta conversão
+*/
+
+@layer base {
+  :root {
+    /* Backgrounds principais */
+    --background: 0 0% 99%;
+    --background-alt: 14 65% 95%;
+    --foreground: 334 83% 28%;
+
+    /* Cards e elementos */
+    --card: 0 0% 100%;
+    --card-foreground: 334 83% 28%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 334 83% 28%;
+
+    /* Cores primárias - DallatyJoias brand */
+    --primary: 334 83% 28%;
+    --primary-dark: 334 83% 20%;
+    --primary-light: 15 34% 73%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secundárias - tons da marca */
+    --secondary: 14 65% 85%;
+    --secondary-foreground: 334 83% 28%;
+
+    /* Tons suaves */
+    --muted: 15 34% 90%;
+    --muted-foreground: 334 40% 45%;
+
+    /* Acentos */
+    --accent: 15 34% 73%;
+    --accent-foreground: 334 83% 28%;
+
+    /* Estados de erro */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Bordas e inputs */
+    --border: 15 20% 88%;
+    --input: 15 20% 88%;
+    --ring: 334 83% 28%;
+
+    /* Cores especiais para joalheria */
+    --gold: 15 34% 73%;
+    --gold-light: 14 65% 85%;
+    --gold-dark: 334 83% 28%;
+    --luxury-bg: 334 40% 8%;
+    --luxury-text: 15 34% 73%;
+
+    /* Gradientes elegantes */
+    --gradient-gold: linear-gradient(135deg, hsl(14 65% 85%), hsl(15 34% 73%));
+    --gradient-luxury: linear-gradient(135deg, hsl(334 40% 8%), hsl(334 83% 28%));
+    --gradient-hero: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+
+    /* Sombras elegantes */
+    --shadow-gold: 0 8px 32px hsl(15 34% 73% / 0.25);
+    --shadow-luxury: 0 20px 60px rgba(135,11,61,0.3);
+    --shadow-elegant: 0 4px 20px rgba(0,0,0,0.1);
+
+    /* Transições suaves */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Modo escuro elegante para joalheria */
+    --background: 334 40% 8%;
+    --background-alt: 334 40% 10%;
+    --foreground: 14 65% 85%;
+
+    --card: 334 40% 10%;
+    --card-foreground: 14 65% 85%;
+
+    --popover: 334 40% 10%;
+    --popover-foreground: 14 65% 85%;
+
+    --primary: 15 34% 73%;
+    --primary-dark: 334 83% 28%;
+    --primary-light: 14 65% 85%;
+    --primary-foreground: 334 83% 28%;
+
+    --secondary: 334 40% 15%;
+    --secondary-foreground: 14 65% 85%;
+
+    --muted: 334 20% 18%;
+    --muted-foreground: 15 34% 65%;
+
+    --accent: 15 34% 73%;
+    --accent-foreground: 334 83% 28%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 334 20% 20%;
+    --input: 334 20% 20%;
+    --ring: 15 34% 73%;
+
+    --luxury-bg: 334 40% 8%;
+    --luxury-text: 14 65% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Botões especiais para joalheria */
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-light to-gold text-foreground px-8 py-4 rounded-xl font-semibold text-lg
+           shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-whatsapp {
+    @apply bg-[#25d366] hover:bg-[#20bd5a] text-white px-6 py-3 rounded-full font-semibold
+           shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300
+           flex items-center gap-2;
+  }
+
+  .btn-luxury {
+    @apply bg-gradient-to-r from-luxury-bg to-secondary text-luxury-text px-8 py-4 rounded-xl font-semibold
+           border border-gold/20 hover:border-gold/40 shadow-2xl hover:shadow-xl
+           transform hover:scale-105 transition-all duration-300;
+  }
+
+  /* Seções hero */
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/50;
+  }
+
+  /* Cards de produto */
+  .product-card {
+    @apply bg-card rounded-2xl shadow-lg hover:shadow-2xl p-6 
+           transform hover:scale-105 transition-all duration-300
+           border border-border hover:border-gold/30 aspect-square
+           flex flex-col justify-between;
+  }
+
+  /* Efeitos de luxo */
+  .luxury-text {
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+  }
+
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-r 
+           from-transparent via-white/20 to-transparent
+           transform -skew-x-12 -translate-x-full animate-pulse;
+  }
+
+  /* Animações personalizadas */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(15 34% 73% / 0.3); }
+  to { box-shadow: 0 0 40px hsl(15 34% 73% / 0.6); }
+}
